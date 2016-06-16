@@ -22,7 +22,7 @@
 #20160615 DWT 0.1 Shell Script
 #20160615 DWT 0.2 Registry Date Converter
 #
-$ws = "AO_Health_Check_Core.pl" ;
+$ws = "PowerShell_Tests.pl" ;
 $ps = 'c:\Windows\SysWOW64\WindowsPowerShell\v1.0\powershell.exe' ;
 #
 use Time::Local ;
@@ -49,7 +49,7 @@ close(CMD) ;
 #
 $net_cmd = "net start" ;
 $ps_cmd = "$ps -command $net_cmd" ;
-if(!open(CMD, "$ps_cmd |")) {
+if(!open(CMD, "$ps_cmd |&")) {
 	printf("#### %s Error: could not run command: %s\n", $ws, $ps_cmd) ;
 	exit 1 ;
 }
